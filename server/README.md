@@ -1,3 +1,14 @@
-# FUNCIONES PARA AUTENTICACIÓN CON JSON WEB TOKENS
+# Basic ussage of sockets
 
-Autentica al usuario y le devuelve tokens al servidor
+To make this example install:
+
+- database mongodb
+- express.js
+- mongoose
+- react
+- socket.io
+
+resources to help:
+https://stackoverflow.com/a/53386475/9868383
+https://stackoverflow.com/a/58378206/9868383
+https://stackoverflow.com/a/54675209/9868383
