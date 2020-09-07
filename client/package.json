@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "mi todo list",
   "main": "index.jsx",
-  "author": "daiton",
+  "author": "D4ITON",
   "license": "MIT",
   "scripts": {
     "dev": "react-scripts start"

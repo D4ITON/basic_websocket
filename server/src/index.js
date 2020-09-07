@@ -1,36 +1,27 @@
-const app = require("./app");
-require("dotenv").config();
-require("./database");
-// const connect = require("./database");
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
 
-// sockets
+// database conection
+mongoose
+  .connect("mongodb://localhost/websockets", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then((db) => console.log("Database initialized"));
+
+app.use(express.json()); //  this replace body-parser
+app.use(express.urlencoded({ extended: true })); // to html forms
+
+// sockets instalation
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-const MessageController = require("./controllers/messages.controller");
-
-// async function init() {
-//   await app.listen(3009);
-//   console.log("Server on port: 3009");
-// }
-
-// init();
 
 server.listen(3009, () => {
   console.log("server on port 3009");
 });
 
-// io.on("connection", (socket) => {
-//   socket.on("initial_data", (message) => {
-//     MessageController.sendDataToClient(message);
-//   });
-
-//   socket.on("input_from_client", (message) => {
-//     MessageController.sendDataToClient(message);
-//   });
-// });
-
+// to load socket on differents files
 io.on("connection", (socket) => {
   require("./controllers/messages.controller")(socket, io);
-
-  // return io;
 });

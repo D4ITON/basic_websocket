@@ -1,19 +1,18 @@
-const Chat = require("../models/Chat");
+const Message = require("../models/Message");
 
 async function sendDataToClient(io) {
   try {
-    const messages = await Chat.find({});
-    // console.log(messages);
+    const messages = await Message.find({});
     io.emit("load_messages", messages);
   } catch (err) {
     console.log(err);
   }
 }
 
-async function setNewMessage(message, io) {
+async function setNewMessage(messageParam, io) {
   try {
-    const chat = new Chat({ message });
-    const messageStored = await chat.save();
+    const message = new Message({ bodyOfMessage: messageParam });
+    const messageStored = await message.save();
     if (messageStored) sendDataToClient(io);
   } catch (err) {
     console.log(err);
