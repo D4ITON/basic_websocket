@@ -1,0 +1,21 @@
+form {
+  /* min-height: 100vh; */
+  display: flex;
+}
+
+.form-container {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
+}
+
+.render-chat {
+  min-width: 250px;
+  min-height: 300px;
+  border: 1px solid red;
+}

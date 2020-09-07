@@ -1,0 +1,29 @@
+{
+  "name": "estructura-vacia-react",
+  "version": "1.0.0",
+  "description": "mi todo list",
+  "main": "index.jsx",
+  "author": "daiton",
+  "license": "MIT",
+  "scripts": {
+    "dev": "react-scripts start"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "socket.io-client": "^2.3.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
